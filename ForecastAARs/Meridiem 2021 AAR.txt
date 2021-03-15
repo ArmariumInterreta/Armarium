@@ -6,7 +6,7 @@ Future model development
 
 Distribution choice
 -Asymmetric distributions (lognorm, log-t and beta) are very valuable; they helped to capture the somewhat lower swing to Labor in its safe seats
--Wrong factor was chosen ( (p*(1-p))/(p_avg * (1 - p_avg)) instead of sqrt((p*(1-p))/(p_avg * (1 - p_avg))); the latter is theoretically appropriate). Should also consider using an additive term instead of multiplicative.
+-Wrong factor was chosen for adjusting scale parameter for minor parties ( (p*(1-p))/(p_avg * (1 - p_avg)) instead of sqrt((p*(1-p))/(p_avg * (1 - p_avg))); the latter is theoretically appropriate). Should also consider using an additive term instead of multiplicative.
 -Need to look into setting a hard floor for scale parameter; although this was not an issue at this election, it may be the case that a pollster or group of pollsters has a good run polling a party which should not last (Green vote, QLD 2020). Floor can be set to the theoretical sampling error of a poll with sample size n (more complex methods needed for multi-poll averages).
 
 Elasticity model
