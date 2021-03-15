@@ -1,0 +1,40 @@
+Future model development
+-Need to fully shift the model from Excel onto R (and combine all parts into a single R project instead of being split over multiple R projects)
+-For future models, it may be worthwhile to do a full backtest on the entire model instead of backtesting individual parts - a lot of bugs which needed to be worked out post-launch (although now that a lot of code is in place the next model should have fewer such issues)
+-In particular renamed electorates need to be watched out for, the Girrawheen/Landsdale issue caused a lot of issues for the model early on
+-For future models, more quality checks may be worthwhile. Although we should also be wary of adjusting the model simply because it produces results we don't think are right, there were quite a few oddball results produced by bugs in the model/outlier data (see below for details)
+
+Distribution choice
+-Asymmetric distributions (lognorm, log-t and beta) are very valuable; they helped to capture the somewhat lower swing to Labor in its safe seats
+
+Elasticity model
+-May be worthwhile to look into whether or not safe seats are less elastic during big swings; it appears that seats which were safe for the major parties prior to the election experienced a lower swing than in other areas
+-Need to look into the elasticity model; the elasticity estimate for Churchlands was clearly either wrong or inappropriate in a lopsided election
+-In particular, the bug in Churchlands was driven by a single polling booth where the code produced an elasticity estimate of -2.55 (!) even after weighting to 1. 
+-Going forward, there are two options:
+1. Instead of using an essentially linear elasticity model (i.e. predicted result = 2pp lean + predicted 2pp margin * elasticity), we can switch to a sigmoid model of electorate 2pp (easiest and most plausible model would be logistic)
+	Benefits: A more plausible fit to how the electorate behaves, especially at the extremes (if  seat is more elastic between 40 and 60, it has to be less elastic between 60 and 100)
+	Drawbacks: More prone to overfitting, and requires more data to behave robustly. Additionally a sigmoid curve would encode the assumption that seats with low elasticity are not usually evenly divided seats
+2. Implement guardrails to either override the program when it produces wildly implausible outputs (e.g. if it outputs a -ve elasticity or a elasticity of >= 2)
+	Benefits: With the exception of Churchlands (which this solution would fix), there's evidence that the elasticity model otherwise works fairly well. Switching to a different model over what is essentially a bug in Churchlands might be counterproductive.
+	Drawbacks: A linear swing model might not be appropriate at the extreme ends of 2pp margins (e.g. if a district was estimated to have an elasticity of 1.3 and no 2pp lean, this implies that in an election where one side is ahead 90-10, the estimated 2pp in this seat would be 102%. While this solution would solve the problem at hand, the underlying possibility of a model breakdown in extreme circumstances still exists.
+3. Build a dynamic elasticity model which weights towards 1 as statewide/national 2pp leads get to the extremes
+	Benefits: Effectively implements a sigmoid model for usually-elastic districts, and an inverse-sigmoid model for usually-inelastic districts, with bounding (so no Inf or -Inf values). If correctly implemented can allow for any combination of elasticity and 2pp lean. Probably the most accurate way of modelling the electorate.
+	Drawbacks: It will be much harder to calibrate the model as there are very few landslide elections we have to work off (and basically no recent ones at the federal level).
+-Probably look into implementing some combination of 2 and 3 (although 3 won't make much impact unless there's a landslide).
+-If solution 2 was implemented, Meridiem would have forecasted a 2pp of 50.06% for Labor in Churchlands, which is much closer to the result than 45.6% (suggesting the elasticity model mostly works well)
+
+Candidate effects model
+-Candidate effect modelling did well this election (swing to Labor was lower in seats with retiring Labor members, and swing was higher in seats with retiring Liberal members)
+-Party leader effects may not be a real thing - adjusting for those in Dawesville and Cottesloe ended up making the model worse
+-Need to look into disrupted seats, the swing in Darling Range was significantly smaller than in other seats
+
+Fundamentals model
+-Fundamentals correctly "called" the winner (Labor) but did significantly worse than final polling (as expected)
+-The theoretically appropriate curve (Gompertz curve, a=1, b=7, c=-0.0205) unsurprisingly outperformed the curve with higher performance in backtesting (Gompertz curve, a=1, b=1, c=-0.0205)
+-Consider looking into more variables (e.g. state budgets), or maybe collecting data about pandemic incumbent govts to build a more rigorous fundamentals model
+
+Incumbent skew
+-It looks like polling will have underestimated the incumbent at the last 4 state elections, suggesting the possibility that incumbent skew has reversed itself.
+
+-(from Delphi 2020) Look into whether there's any value in implementing regional definitions (e.g. rural WA) for a deviation from statewide swing model, or if demographic regressions capture pretty much all of the regional differences
