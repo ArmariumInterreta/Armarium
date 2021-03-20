@@ -1,12 +1,17 @@
 Future model development
 -Need to fully shift the model from Excel onto R (and combine all parts into a single R project instead of being split over multiple R projects)
 -For future models, it may be worthwhile to do a full backtest on the entire model instead of backtesting individual parts - a lot of bugs which needed to be worked out post-launch (although now that a lot of code is in place the next model should have fewer such issues)
+-One of these bugs (the code failing to integrate seat polling) was very costly at this election - it probably cost the model correct calls in Carine and Churchlands (which it could have made had the code worked)
 -In particular renamed electorates need to be watched out for, the Girrawheen/Landsdale issue caused a lot of issues for the model early on
 -For future models, more quality checks may be worthwhile. Although we should also be wary of adjusting the model simply because it produces results we don't think are right, there were quite a few oddball results produced by bugs in the model/outlier data (see below for details)
 
+Vote model
+-In the future 1:1 weights should be used for last-election-preference-flow estimated 2pp and the 2pp estimate published by the pollster. We switched to 1:4 this election due to concern about how big the gap was (more than 2%), and it turned out that the primary vote based model was more correct (less wrong?)
+-Seat poll based methods should be used to adjust the statewide 2pp estimate in addition to primary vote estimates.
+
 Distribution choice
 -Asymmetric distributions (lognorm, log-t and beta) are very valuable; they helped to capture the somewhat lower swing to Labor in its safe seats
--Wrong factor was chosen for adjusting scale parameter for minor parties ( (p*(1-p))/(p_avg * (1 - p_avg)) instead of sqrt((p*(1-p))/(p_avg * (1 - p_avg))); the latter is theoretically appropriate). Should also consider using an additive term instead of multiplicative.
+-Wrong factor was chosen ( (p*(1-p))/(p_avg * (1 - p_avg)) instead of sqrt((p*(1-p))/(p_avg * (1 - p_avg))); the latter is theoretically appropriate). Should also consider using an additive term instead of multiplicative.
 -Need to look into setting a hard floor for scale parameter; although this was not an issue at this election, it may be the case that a pollster or group of pollsters has a good run polling a party which should not last (Green vote, QLD 2020). Floor can be set to the theoretical sampling error of a poll with sample size n (more complex methods needed for multi-poll averages).
 
 Elasticity model
@@ -38,5 +43,8 @@ Fundamentals model
 
 Incumbent skew
 -It looks like polling will have underestimated the incumbent at the last 4 state elections, suggesting the possibility that incumbent skew has reversed itself.
+
+Seat poll model
+-Seat polling should probably be given 1:1 weight (as per Dr Bonham's findings wrt federal seat polls) with the elastic swing prediction instead of 1:3. We gave seat polling less weight due to an abundance of caution and a recognition that seat polls have historically been of very poor quality. More research might be needed in this area before the next state election.
 
 -(from Delphi 2020) Look into whether there's any value in implementing regional definitions (e.g. rural WA) for a deviation from statewide swing model, or if demographic regressions capture pretty much all of the regional differences
