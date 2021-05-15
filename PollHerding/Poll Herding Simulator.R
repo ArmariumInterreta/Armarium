@@ -94,6 +94,11 @@ Init_Polls <- data.frame(foreach(i=1:pollsters,.inorder=TRUE) %dopar% {
   Polls_Ind[[i]][,1]
 })
 
+# Aggregates 2nd week of poll samples for later herding
+W2_Polls_Ind <- data.frame(foreach(i=1:pollsters,.inorder=TRUE) %dopar% {
+  Polls_Ind[[i]][,2]
+})
+
 # Aggregates final non-herded polls
 Final_Polls_Ind <- data.frame(foreach(i=1:pollsters,.inorder=TRUE) %dopar% {
   Polls_Ind[[i]][,weeks]
@@ -331,8 +336,8 @@ descdist(herd_avgs)
 #plot(x=corrdevs_ind$sample_cov,y=corrdevs_ind$corrdev,pch=21,col=NA,bg=rgb(0,0,0,1/50))
 #plot(x=corrdevs_herd$sample_cov,y=corrdevs_herd$corrdev,pch=21,col=NA,bg=rgb(0,0,0,1/50))
 
-summary(lm(corrdev~.,corrdevs_ind))
-summary(lm(corrdev~.,corrdevs_herd))
+#summary(lm(corrdev~.,corrdevs_ind))
+#summary(lm(corrdev~.,corrdevs_herd))
 #corrdevs <- rbind(corrdevs_ind,corrdevs_herd)
 #summary(lm(corrdev~.,corrdevs))
 
