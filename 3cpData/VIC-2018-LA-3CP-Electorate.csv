@@ -1,0 +1,89 @@
+DistrictID,District,CalcType,Cand1,Cand2,Cand3,Cand1_3cp,Cand2_3cp,Cand3_3cp
+1,Albert Park,Exact,ALP,LIB,GRN,46.1,33.46,20.43
+2,Altona,Estimate,ALP,LIB,IND,57.95,26.23,15.82
+3,Bass,Exact,LIB,ALP,GRN,45.6,44.85,9.55
+4,Bayswater,Exact,LIB,ALP,GRN,47.4,41.83,10.77
+5,Bellarine,PartialEstimate,ALP,LIB,GRN,51.56,36.7,11.73
+6,Benambra,Exact,LIB,IND,ALP,47.14,28.44,24.41
+7,Bendigo East,Estimate,ALP,LIB,NAT,58.02,23.64,18.34
+8,Bendigo West,Estimate,ALP,LIB,GRN,55.18,28.46,16.37
+9,Bentleigh,Estimate,ALP,LIB,GRN,53.3,35.87,10.83
+10,Box Hill,Exact,LIB,ALP,GRN,45.25,40.05,14.7
+11,Brighton,Exact,LIB,ALP,GRN,47.37,33.58,19.06
+12,Broadmeadows,Estimate,ALP,LIB,GRN,70.15,17.14,12.71
+13,Brunswick,Exact,GRN,ALP,LIB,45.21,42.46,12.33
+14,Bulleen,Exact,LIB,ALP,GRN,52.18,36.5,11.32
+15,Bundoora,Estimate,ALP,LIB,GRN,58.46,29.66,11.88
+16,Buninyong,PartialEstimate,ALP,LIB,GRN,52.12,34.83,13.05
+17,Burwood,Exact,LIB,ALP,GRN,43.96,41.47,14.57
+18,Carrum,Estimate,ALP,LIB,GRN,55.67,35.3,9.03
+19,Caulfield,Exact,LIB,ALP,GRN,47.88,35.42,16.69
+20,Clarinda,Estimate,ALP,LIB,GRN,59.31,26.92,13.77
+21,Cranbourne,Estimate,ALP,LIB,DHJ,56.74,34.97,8.29
+22,Croydon,Exact,LIB,ALP,GRN,49.14,39.18,11.68
+23,Dandenong,Estimate,ALP,LIB,GRN,67.26,24.47,8.26
+24,Eildon,Exact,LIB,ALP,GRN,50.19,37.98,11.83
+25,Eltham,Exact,ALP,LIB,GRN,49.71,39.5,10.79
+26,Essendon,Exact,ALP,LIB,GRN,48.57,31.57,19.86
+27,Euroa,Estimate,NAT,ALP,IND,59.71,31.53,8.76
+28,Evelyn,Exact,LIB,ALP,GRN,49.49,40.42,10.09
+29,Ferntree Gully,Exact,LIB,ALP,GRN,49.41,41.01,9.58
+30,Footscray,Estimate,ALP,GRN,LIB,59.14,20.69,20.17
+31,Forest Hill,Exact,LIB,ALP,GRN,49.25,41.32,9.43
+32,Frankston,Exact,ALP,LIB,GRN,50.17,36.35,13.48
+33,Geelong,Exact,ALP,IND,LIB,50.41,27.21,22.38
+34,Gembrook,Exact,LIB,ALP,GRN,48.26,41.12,10.62
+35,Gippsland East,Estimate,NAT,ALP,GRN,64.94,25.46,9.6
+36,Gippsland South,Exact,NAT,ALP,GRN,61.91,28.4,9.7
+37,Hastings,Exact,LIB,ALP,GRN,48.16,40.24,11.6
+38,Hawthorn,Exact,LIB,ALP,GRN,45.5,33.71,20.79
+39,Ivanhoe,Exact,ALP,LIB,GRN,48.62,34.47,16.91
+40,Kew,Exact,LIB,ALP,GRN,50.43,32,17.57
+41,Keysborough,Estimate,ALP,LIB,IND,60.69,30.55,8.75
+42,Kororoit,Estimate,ALP,LIB,GRN,65.52,21.98,12.5
+43,Lara,Estimate,ALP,LIB,GRN,61.11,26.19,12.7
+44,Lowan,Estimate,NAT,ALP,IND,68.17,23.27,8.56
+45,Macedon,PartialEstimate,ALP,LIB,GRN,51.9,34.72,13.38
+46,Malvern,Estimate,LIB,ALP,GRN,52.81,31.72,15.46
+47,Melbourne,Exact,GRN,ALP,LIB,42.62,38.32,19.06
+48,Melton,Exact,ALP,LIB,IND,45.34,28.26,26.4
+49,Mildura,Exact,NAT,IND,ALP,41.95,38.01,20.04
+50,Mill Park,Estimate,ALP,LIB,AJP,67.77,22.86,9.37
+51,Monbulk,Exact,ALP,LIB,GRN,44.01,38.8,17.19
+52,Mordialloc,Estimate,ALP,LIB,GRN,53.31,34.22,12.47
+53,Mornington,Estimate,LIB,ALP,GRN,51.9,35.71,12.39
+54,Morwell,Exact,ALP,IND,NAT,43.01,32.14,24.85
+55,Mount Waverley,Exact,LIB,ALP,GRN,46.03,43.74,10.23
+56,Mulgrave,Estimate,ALP,LIB,GRN,58.61,34.23,7.16
+57,Murray Plains,Estimate,NAT,ALP,SFF,60.9,22.37,16.74
+58,Narracan,Estimate,LIB,ALP,GRN,54.17,37.86,7.97
+59,Narre Warren North,Estimate,ALP,LIB,GRN,53.68,38.36,7.96
+60,Narre Warren South,Exact,ALP,LIB,GRN,51.77,40.57,7.65
+61,Nepean,Exact,LIB,ALP,GRN,46.08,40.09,13.83
+62,Niddrie,Estimate,ALP,LIB,GRN,55.91,35.06,9.03
+63,Northcote,Exact,ALP,GRN,LIB,44.31,43.36,12.33
+64,Oakleigh,Estimate,ALP,LIB,GRN,54.89,31.81,13.3
+65,Ovens Valley,Exact,NAT,ALP,IND,51.92,24.1,23.98
+66,Pascoe Vale,Exact,ALP,IND,GRN,44.11,36.96,18.93
+67,Polwarth,Estimate,LIB,ALP,GRN,52.32,34.89,12.79
+68,Prahran,Exact,LIB,GRN,ALP,36.7,31.98,31.33
+69,Preston,Estimate,ALP,GRN,LIB,56.96,22.92,20.11
+70,Richmond,Exact,ALP,GRN,IND,49.34,40.66,10
+71,Ringwood,Exact,LIB,ALP,GRN,44.21,42.08,13.71
+72,Ripon,Exact,ALP,LIB,SFF,45.32,44.41,10.28
+73,Rowville,Estimate,LIB,ALP,GRN,51.8,36.05,12.15
+74,Sandringham,Exact,LIB,ALP,GRN,47.86,39.61,12.53
+75,Shepparton,Exact,IND,LIB,NAT,49.31,32.3,18.39
+76,South Barwon,Exact,ALP,LIB,GRN,42.08,41.44,16.48
+77,South-West Coast,Exact,LIB,ALP,IND,40.29,34.99,24.71
+78,St Albans,Estimate,ALP,LIB,GRN,60.92,25.64,13.43
+79,Sunbury,Exact,ALP,LIB,GRN,58.4,33.83,7.77
+80,Sydenham,Estimate,ALP,LIB,GRN,62.33,30,7.67
+81,Tarneit,Estimate,ALP,LIB,GRN,59.84,29.41,10.75
+82,Thomastown,Estimate,ALP,LIB,IND,70.04,19.44,10.53
+83,Warrandyte,Exact,LIB,ALP,GRN,50.77,36.49,12.74
+84,Wendouree,Exact,ALP,LIB,GRN,51.18,36.56,12.26
+85,Werribee,Exact,ALP,IND,LIB,52.13,25.93,21.94
+86,Williamstown,Estimate,ALP,LIB,GRN,55.6,23.06,21.34
+87,Yan Yean,Estimate,ALP,LIB,GRN,58.71,32.39,8.9
+88,Yuroke,Estimate,ALP,LIB,GRN,61.67,28.31,10.03
