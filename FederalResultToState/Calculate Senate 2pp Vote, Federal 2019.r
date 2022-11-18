@@ -3,13 +3,15 @@ require(tidyr)
 require(tibble)
 require(stringr)
 
-BaseDir <- "C:/Users/Ethan/Desktop/Projects/Project Nebula/"
+## Note that you will need to download the Senate vote data on your own as those files are very big
+## In particular you will need to download the ZIP files from the "Formal Preferences" folder
+## Extract the CSVs and place them into your working directory (edit code below to direct R accordingly)
+
+BaseDir <- "ENTER WORKING DIRECTORY HERE"
 States <- c("New South Wales","Victoria","Queensland","Western Australia","South Australia","Tasmania","Northern Territory","Australian Capital Territory")
 StateAbs <- c("NSW","VIC","QLD","WA","SA","TAS","NT","ACT")
 
-DivSenData2019 <- read.csv("C:/Users/Ethan/Desktop/Projects/Project Nebula/Research/Federal-2019/RawData/SenateFirstPrefsByDivisionByVoteTypeDownload-24310.csv")
-PollingPlaces2019 <- read.csv("C:/Users/Ethan/Desktop/Projects/Project Nebula/Research/Federal-2019/RawData/GeneralPollingPlacesDownload-24310.csv")
-BallotFiles <- list.files(paste0(BaseDir,"Research/Federal-2019/BallotData"))
+BallotFiles <- list.files(paste0(BaseDir))
 Party1 <- c("Labor.Country.Labor","Labor","Australian.Labor.Party","A.L.P.","Australian.Labor.Party..Northern.Territory..Branch")
 Party2 <- c("Liberal...Nationals","Liberal.The.Nationals","LIBERAL.THE.NATIONALS","Liberal.National.Party.of.Queensland","Liberal","Country.Liberals..NT.")
 PartyAb1 <- "ALP"
